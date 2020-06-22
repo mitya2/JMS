@@ -1,0 +1,29 @@
+﻿@model UserViewModel
+
+<h3>@ViewBag.Title</h3>
+
+<div class="table-responsive table-hover">
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>ФИО</th>
+                <th>Телефон</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var el in Model.Users)
+            {
+                <tr>
+                    <td><a asp-controller="User" asp-action="Edit" asp-route-id="@el.id">@el.UserName</a></td>
+                    <td>@el.Phone</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<hr />
+<p class="text-center">
+    <a class="btn btn-success" asp-controller="User" asp-action="Edit">Создать</a>
+</p>
+
+

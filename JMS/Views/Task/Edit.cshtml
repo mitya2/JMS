@@ -1,0 +1,59 @@
+﻿@model TaskViewModel
+@{ViewBag.Title = Model.Task.id == default ? "Создание" : "Редактирование"; }
+
+<h3>@ViewBag.Title задания</h3>
+
+<div>
+    <form method="post">
+        <input type="hidden" asp-for="Task.id" />
+        <input type="hidden" asp-for="Task.UserID" />
+
+        <div class="form-group">
+            <label asp-for="Task.UserID"></label>
+            <div>
+                <span asp-validation-for="Task.UserID" class="text-danger"></span>
+                <select class="form-control" asp-for="UserID" asp-items="Model.Users"></select>
+                <span asp-validation-for="Task.UserID" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Task.CloseDateTime"></label>
+            <div class='input-group date' id='datetimepicker'>
+                <input asp-for="Task.CloseDateTime" type='text' class="form-control" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+                <span asp-validation-for="Task.CloseDateTime" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Task.Content"></label>
+            <div>
+                <input asp-for="Task.Content" class="form-control" />
+                <span asp-validation-for="Task.Content" class="text-danger"></span>
+            </div>
+        </div>
+
+        <hr />
+        <p class="text-center">
+            @if (Model.Users.Count() == 0)
+            {
+                <input asp-action="Edit" class="btn btn-success" type="submit" value="Сохранить" disabled />
+            }
+            else
+            {
+                <input asp-action="Edit" class="btn btn-success" type="submit" value="Сохранить" />
+            }
+
+            @if (Model.Task.id != default)
+            {
+                <input asp-action="Delete" class="btn btn-danger" type="submit" value="Удалить" />
+            }
+            <input asp-controller="Task" asp-action="List" class="btn btn-info" type="submit" value="Отмена" />
+        </p>
+    </form>
+</div>
+
+
+
+

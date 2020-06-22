@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>
+        @Config.Title
+    </title>
+    @await Html.PartialAsync("MetaPartial")
+    @await Html.PartialAsync("CssPartial")
+</head>
+<body>
+    @await Html.PartialAsync("HeaderPartial")
+    <div class="container-fluid">
+        <div class="row">
+            @await Html.PartialAsync("SidebarPartial")
+            <div role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-md-2">
+                @RenderBody()
+            </div>
+        </div>
+        <div class="row bg-dark p-2 fixed-bottom">
+            <div class="col-sm">
+                @await Html.PartialAsync("FooterPartial")
+            </div>
+        </div>
+    </div>
+    @await Html.PartialAsync("ScriptsPartial")
+</body>
+</html>

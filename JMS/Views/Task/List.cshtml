@@ -1,0 +1,35 @@
+﻿@model TaskViewModel
+
+<script>
+
+</script>
+<h3>@ViewBag.Title</h3>
+
+<div class="table-responsive table-hover">
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>Содержание</th>
+                <th>Сотрудник</th>
+                <th>Дата выдачи</th>
+                <th>Дата исполнения</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var el in Model.UsersTasks)
+            {
+                <tr asp-controller="Task" asp-action="Edit">
+                    <td><a asp-controller="Task" asp-action="Edit" asp-route-id="@el.id">@el.Content</a></td>
+                    <td>@el.User.UserName</td>
+                    <td>@el.InitialDateTime</td>
+                    <td>@el.CloseDateTime</td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
+<hr />
+<p class="text-center">
+    <a class="btn btn-success" asp-controller="Task" asp-action="Edit">Создать</a>
+</p>
