@@ -1,8 +1,6 @@
 ﻿@model TaskViewModel
 
-<script>
 
-</script>
 <h3>@ViewBag.Title</h3>
 
 <div class="table-responsive table-hover">
@@ -21,8 +19,8 @@
                 <tr asp-controller="Task" asp-action="Edit">
                     <td><a asp-controller="Task" asp-action="Edit" asp-route-id="@el.id">@el.Content</a></td>
                     <td>@el.User.UserName</td>
-                    <td>@String.Format(@"{0:dd.mm.yyyy}", el.InitialDateTime)</td>
-                    <td>@String.Format(@"{0:dd.mm.yyyy}", el.CloseDateTime)</td>
+                    <td>@String.Format(@"{0:dd.MM.yyyy}", el.InitialDateTime)</td>
+                    <td>@String.Format(@"{0:dd.MM.yyyy}", el.CloseDateTime)</td>
                 </tr>
 
             }

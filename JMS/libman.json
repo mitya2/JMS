@@ -6,5 +6,10 @@
       "library": "bootstrap-datepicker@1.9.0",
       "destination": "wwwroot/bootstrap-datepicker/"
     }
-  ]
+  ,
+{
+  "library": "jquery@3.5.1",
+  "destination": "wwwroot/jquery/"
+}
+]
 }

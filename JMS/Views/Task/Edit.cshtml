@@ -16,7 +16,6 @@
         <div class="form-group">
             <label asp-for="Task.UserID"></label>
             <div>
-                <span asp-validation-for="Task.UserID" class="text-danger"></span>
                 <select asp-for="UserID" asp-items="Model.Users" class="form-control"></select>
                 <span asp-validation-for="Task.UserID" class="text-danger"></span>
             </div>
@@ -24,7 +23,6 @@
         <div class="form-group">
             <label asp-for="Task.CloseDateTime"></label>
             <div>
-                <span asp-validation-for="Task.CloseDateTime" class="text-danger"></span>
                 <input asp-for="Task.CloseDateTime" type="text" id ="datepicker" class="form-control"/>
                 <span asp-validation-for="Task.CloseDateTime" class="text-danger"></span>
             </div>

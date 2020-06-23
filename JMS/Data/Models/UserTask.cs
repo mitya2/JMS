@@ -14,6 +14,12 @@ namespace JMS.Models
   
     public class UserTask
     {
+        public UserTask()
+        {
+            InitialDateTime = DateTime.Now;
+        }
+
+        [Key]
         public int id { get; set; }
 
         [Required(ErrorMessage = "Содержание задания не должно быть пустым")]
@@ -23,10 +29,10 @@ namespace JMS.Models
         [Display(Name = "Дата выдачи задания")]
         public DateTime InitialDateTime { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Неверный формат даты")]
+        [DataType(DataType.Date), DisplayFormat(DataFormatString = @"{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Дата выполнения задания")]
-        [DataType(DataType.Date), DisplayFormat(DataFormatString = @"{0:dd.mm.yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime CloseDateTime { get; set; }
+        public DateTime? CloseDateTime { get; set; }
 
         [Display(Name = "Сотрудник")] 
         public int UserID { get; set; }
