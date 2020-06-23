@@ -1,6 +1,11 @@
 ﻿@model TaskViewModel
 @{ViewBag.Title = Model.Task.id == default ? "Создание" : "Редактирование"; }
 
+@section Header
+{
+    <link href="~/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
+}
+
 <h3>@ViewBag.Title задания</h3>
 
 <div>
@@ -12,17 +17,15 @@
             <label asp-for="Task.UserID"></label>
             <div>
                 <span asp-validation-for="Task.UserID" class="text-danger"></span>
-                <select class="form-control" asp-for="UserID" asp-items="Model.Users"></select>
+                <select asp-for="UserID" asp-items="Model.Users" class="form-control"></select>
                 <span asp-validation-for="Task.UserID" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
             <label asp-for="Task.CloseDateTime"></label>
-            <div class='input-group date' id='datetimepicker'>
-                <input asp-for="Task.CloseDateTime" type='text' class="form-control" />
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                </span>
+            <div>
+                <span asp-validation-for="Task.CloseDateTime" class="text-danger"></span>
+                <input asp-for="Task.CloseDateTime" type="text" id ="datepicker" class="form-control"/>
                 <span asp-validation-for="Task.CloseDateTime" class="text-danger"></span>
             </div>
         </div>
@@ -53,6 +56,13 @@
         </p>
     </form>
 </div>
+
+
+@section Scripts {
+    <script src="~/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/bootstrap-datepicker/locales/bootstrap-datepicker.ru.min.js"></script>
+    <script src="~/js/datepicker-init.js" asp-append-version="true"></script>
+}
 
 
 

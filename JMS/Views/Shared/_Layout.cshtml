@@ -6,12 +6,13 @@
     </title>
     @await Html.PartialAsync("MetaPartial")
     @await Html.PartialAsync("CssPartial")
+    @RenderSection("Header", false)
 </head>
 <body>
     @await Html.PartialAsync("HeaderPartial")
     <div class="container-fluid">
         <div class="row">
-            @await Html.PartialAsync("SidebarPartial") 
+            @await Html.PartialAsync("SidebarPartial")
             <div role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-md-2">
                 @RenderBody()
             </div>
@@ -23,5 +24,6 @@
         </div>
     </div>
     @await Html.PartialAsync("ScriptsPartial")
+    @RenderSection("Scripts", false)
 </body>
 </html>

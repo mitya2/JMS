@@ -21,8 +21,8 @@
                 <tr asp-controller="Task" asp-action="Edit">
                     <td><a asp-controller="Task" asp-action="Edit" asp-route-id="@el.id">@el.Content</a></td>
                     <td>@el.User.UserName</td>
-                    <td>@el.InitialDateTime</td>
-                    <td>@el.CloseDateTime</td>
+                    <td>@String.Format(@"{0:dd.mm.yyyy}", el.InitialDateTime)</td>
+                    <td>@String.Format(@"{0:dd.mm.yyyy}", el.CloseDateTime)</td>
                 </tr>
 
             }

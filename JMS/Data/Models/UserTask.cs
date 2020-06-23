@@ -23,7 +23,9 @@ namespace JMS.Models
         [Display(Name = "Дата выдачи задания")]
         public DateTime InitialDateTime { get; set; }
 
+        [Required]
         [Display(Name = "Дата выполнения задания")]
+        [DataType(DataType.Date), DisplayFormat(DataFormatString = @"{0:dd.mm.yyyy}", ApplyFormatInEditMode = true)]
         public DateTime CloseDateTime { get; set; }
 
         [Display(Name = "Сотрудник")] 
