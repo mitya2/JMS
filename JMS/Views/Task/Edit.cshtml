@@ -39,18 +39,18 @@
         <p class="text-center">
             @if (Model.Users.Count() == 0)
             {
-                <input asp-action="Edit" class="btn btn-success" type="submit" value="Сохранить" disabled />
+                <input asp-action="Edit" class="btn btn-success btn-custom" type="submit" value="Сохранить" disabled />
             }
             else
             {
-                <input asp-action="Edit" class="btn btn-success" type="submit" value="Сохранить" />
+                <input asp-action="Edit" class="btn btn-success btn-custom" type="submit" value="Сохранить" />
             }
 
             @if (Model.Task.id != default)
             {
-                <input asp-action="Delete" class="btn btn-danger" type="submit" value="Удалить" />
+                <input asp-action="Delete" class="btn btn-danger btn-custom" type="submit" value="Удалить" />
             }
-            <input asp-controller="Task" asp-action="List" class="btn btn-info" type="submit" value="Отмена" />
+            <input asp-controller="Task" asp-action="List" class="btn btn-info btn-custom" type="submit" value="Отмена" />
         </p>
     </form>
 </div>

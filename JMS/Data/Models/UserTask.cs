@@ -31,6 +31,7 @@ namespace JMS.Models
 
         [Required(ErrorMessage = "Неверный формат даты")]
         [DataType(DataType.Date), DisplayFormat(DataFormatString = @"{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
+        
         [Display(Name = "Дата выполнения задания")]
         public DateTime? CloseDateTime { get; set; }
 

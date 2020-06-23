@@ -49,7 +49,6 @@ namespace JMS.Controllers
             UserViewModel model = new UserViewModel();
             model.SideBarState = sideBarState;
             model.Users = _usersRep.Users;
-            ViewBag.Title = "Cотрудники";
             return View(model);
         }
     }

@@ -37,24 +37,45 @@ namespace JMS.Data
                     new UserTask
                     {
                         Content = "Прокачать навык в ASP.NET CORE MVC",
-                        InitialDateTime = DateTime.Now,
+                        InitialDateTime = DateTime.Now.AddDays(-10),
                         CloseDateTime = DateTime.Now.AddDays(14),
                         User = us
                     },
                     new UserTask
                     {
+                        Content = "ПОзнакомиться с Vue.js",
+                        InitialDateTime = DateTime.Now.AddDays(-10),
+                        CloseDateTime = DateTime.Now.AddDays(10),
+                        User = us
+                    },
+                    new UserTask
+                    {
                         Content = "Прокачать навык в Bootstrap",
-                        InitialDateTime = DateTime.Now,
+                        InitialDateTime = DateTime.Now.AddDays(-2),
                         CloseDateTime = DateTime.Now.AddDays(7),
                         User = us
                     },
                     new UserTask
                     {
-                        Content = "Вспомнить MS SQL",
-                        InitialDateTime = DateTime.Now,
-                        CloseDateTime = DateTime.Now.AddDays(3),
+                        Content = "Углубить знания по LINQ",
+                        InitialDateTime = DateTime.Now.AddDays(-1),
+                        CloseDateTime = DateTime.Now.AddDays(1),
                         User = us
-                    }); ;
+                    },
+                    new UserTask
+                    {
+                        Content = "В очередной раз прочитать про паттерны программирования",
+                        InitialDateTime = DateTime.Now.AddDays(-10),
+                        CloseDateTime = DateTime.Now,
+                        User = us
+                    },
+                    new UserTask
+                    {
+                        Content = "Вспомнить MS SQL",
+                        InitialDateTime = DateTime.Now.AddDays(-2),
+                        CloseDateTime = DateTime.Now,
+                        User = us
+                    });
 
                 appDBContext.SaveChanges();
             }

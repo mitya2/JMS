@@ -20,7 +20,6 @@ namespace JMS.Controllers
             sideBarState.TasksCount = _tasksRep.UserTasks.Count();
             sideBarState.UsersCount = _usersRep.Users.Count();
             sideBarState.FinishedTasksCount = _tasksRep.UserTasks.Where(x => x.CloseDateTime < DateTime.Now).Count();
-
         }
     }
 }

@@ -31,7 +31,6 @@ namespace JMS.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public IActionResult Edit(TaskViewModel model)
         {
             if (ModelState.IsValid)
@@ -60,7 +59,6 @@ namespace JMS.Controllers
             TaskViewModel model = new TaskViewModel();
             model.UsersTasks = _tasksRep.UserTasks;
             model.SideBarState = sideBarState;
-            ViewBag.Title = "Задания";
             return View(model);
         }
     }
