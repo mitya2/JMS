@@ -1,19 +1,21 @@
 ﻿using JMS.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace JMS.Data
 {
-    public class AppDBContext : DbContext
+    public class AppDBContext : IdentityDbContext<IdentityUser>
     {
         public AppDBContext(DbContextOptions<AppDBContext> option) : base(option)
         {
 
         }
+
         public DbSet<User> Users { get; set; }
         public DbSet<UserTask> UserTasks { get; set; }
 
