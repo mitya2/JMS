@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using JMS.Data;
 using JMS.Data.Interfaces;
 using JMS.Data.Repositories;
+using Microsoft.AspNetCore.Identity;
 
 namespace JMS
 {
@@ -27,6 +28,18 @@ namespace JMS
             Configuration.Bind("Project", new Config());
 
             services.AddDbContext<AppDBContext>(options => options.UseSqlServer(Config.ConnectionString));
+            
+            //настраиваем identity систему
+            services.AddIdentity<IdentityUser, IdentityRole>(opts =>
+            {
+                opts.User.RequireUniqueEmail = true;
+                opts.Password.RequiredLength = 6;
+                opts.Password.RequireNonAlphanumeric = false;
+                opts.Password.RequireLowercase = false;
+                opts.Password.RequireUppercase = false;
+                opts.Password.RequireDigit = false;
+            }).AddEntityFrameworkStores<AppDBContext>().AddDefaultTokenProviders();
+
             services.AddTransient<IUsers, UsersRepository>();
             services.AddTransient<ITasks, TasksRepository>();
 
@@ -41,13 +54,15 @@ namespace JMS
                 app.UseDeveloperExceptionPage();
             }
 
-            using (var scope = app.ApplicationServices.CreateScope())
+            /*using (var scope = app.ApplicationServices.CreateScope())
             {
                 AppDBContext appDBContext = scope.ServiceProvider.GetRequiredService<AppDBContext>();
                 AppDBContext.Initial(appDBContext);
-            }
+            }*/
             app.UseStaticFiles();
             app.UseRouting();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             // ригистрация маршрутов
             app.UseEndpoints(endpoints =>

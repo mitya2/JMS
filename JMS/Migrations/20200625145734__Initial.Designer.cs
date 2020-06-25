@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JMS.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20200625132420__AddIdentities")]
-    partial class _AddIdentities
+    [Migration("20200625145734__Initial")]
+    partial class _Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -41,6 +41,26 @@ namespace JMS.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1,
+                            Phone = "+79166043064",
+                            UserName = "Панов Д.В."
+                        },
+                        new
+                        {
+                            id = 2,
+                            Phone = "+79166043064",
+                            UserName = "Иванов И.И."
+                        },
+                        new
+                        {
+                            id = 3,
+                            Phone = "+79166043064",
+                            UserName = "Петров П.П."
+                        });
                 });
 
             modelBuilder.Entity("JMS.Models.UserTask", b =>
@@ -69,6 +89,56 @@ namespace JMS.Migrations
                     b.HasIndex("UserID");
 
                     b.ToTable("UserTasks");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1,
+                            CloseDateTime = new DateTime(2020, 7, 9, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(7334),
+                            Content = "Прокачать навык в ASP.NET CORE MVC",
+                            InitialDateTime = new DateTime(2020, 6, 15, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(7224),
+                            UserID = 1
+                        },
+                        new
+                        {
+                            id = 2,
+                            CloseDateTime = new DateTime(2020, 7, 5, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8676),
+                            Content = "ПОзнакомиться с Vue.js",
+                            InitialDateTime = new DateTime(2020, 6, 15, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8672),
+                            UserID = 2
+                        },
+                        new
+                        {
+                            id = 3,
+                            CloseDateTime = new DateTime(2020, 7, 2, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8706),
+                            Content = "Прокачать навык в Bootstrap",
+                            InitialDateTime = new DateTime(2020, 6, 23, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8705),
+                            UserID = 3
+                        },
+                        new
+                        {
+                            id = 4,
+                            CloseDateTime = new DateTime(2020, 6, 26, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8710),
+                            Content = "Углубить знания по LINQ",
+                            InitialDateTime = new DateTime(2020, 6, 24, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8709),
+                            UserID = 1
+                        },
+                        new
+                        {
+                            id = 5,
+                            CloseDateTime = new DateTime(2020, 6, 25, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8715),
+                            Content = "В очередной раз прочитать про паттерны программирования",
+                            InitialDateTime = new DateTime(2020, 6, 15, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8714),
+                            UserID = 2
+                        },
+                        new
+                        {
+                            id = 6,
+                            CloseDateTime = new DateTime(2020, 6, 25, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8719),
+                            Content = "Вспомнить MS SQL",
+                            InitialDateTime = new DateTime(2020, 6, 23, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8718),
+                            UserID = 3
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -96,6 +166,14 @@ namespace JMS.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "5ec87454-8bf5-4703-b8e8-89851fea876d",
+                            ConcurrencyStamp = "42c8877a-09ee-4e90-970f-94f9e11c696f",
+                            Name = "admin"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -185,6 +263,22 @@ namespace JMS.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "c8836f0d-2797-4412-8ef4-5096f985742d",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "ed126026-968c-4cce-acc2-a46cc1bfa227",
+                            Email = "mitya2@yahoo.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            PasswordHash = "AQAAAAEAACcQAAAAEJi4qE4kuRiuboSad2d76AmzLlQM0vt9OctYLOxNeuiUVLKOWNSnGwciGTMHRfDlpQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "",
+                            TwoFactorEnabled = false,
+                            UserName = "admin"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -246,6 +340,13 @@ namespace JMS.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "c8836f0d-2797-4412-8ef4-5096f985742d",
+                            RoleId = "5ec87454-8bf5-4703-b8e8-89851fea876d"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
