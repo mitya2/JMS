@@ -54,11 +54,6 @@ namespace JMS
                 app.UseDeveloperExceptionPage();
             }
 
-            /*using (var scope = app.ApplicationServices.CreateScope())
-            {
-                AppDBContext appDBContext = scope.ServiceProvider.GetRequiredService<AppDBContext>();
-                AppDBContext.Initial(appDBContext);
-            }*/
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthentication();

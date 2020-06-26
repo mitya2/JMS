@@ -11,10 +11,7 @@ namespace JMS.Data
 {
     public class AppDBContext : IdentityDbContext<IdentityUser>
     {
-        public AppDBContext(DbContextOptions<AppDBContext> option) : base(option)
-        {
-
-        }
+        public AppDBContext(DbContextOptions<AppDBContext> option) : base(option) {  }
 
         public new DbSet<User> Users { get; set; }
         public DbSet<UserTask> UserTasks { get; set; }
@@ -23,18 +20,20 @@ namespace JMS.Data
         {
             base.OnModelCreating(modelBuilder);
 
-
             modelBuilder.Entity<IdentityRole>().HasData(new IdentityRole
             {
                 Id = "5ec87454-8bf5-4703-b8e8-89851fea876d",
-                Name = "admin"
+                Name = "admin",
+                NormalizedName = "ADMIN"
             });
 
             modelBuilder.Entity<IdentityUser>().HasData(new IdentityUser
             {
                 Id = "c8836f0d-2797-4412-8ef4-5096f985742d",
                 UserName = "admin",
+                NormalizedUserName = "ADMIN",
                 Email = "mitya2@yahoo.com",
+                NormalizedEmail = "MITYA2@YAHOO.COM",
                 EmailConfirmed = true,
                 PasswordHash = new PasswordHasher<IdentityUser>().HashPassword(null, "superpassword"),
                 SecurityStamp = string.Empty
