@@ -4,6 +4,7 @@
 <ul class="navbar-nav px-3">
 @if (SignInManager.IsSignedIn(User))
 {
+     
     <li class="nav-item text-nowrap">
         <div>
             <label class="text-white-50 pr-3">Здравствуйте, @User.Identity.Name!</label><a class="btn btn-danger btn-sm btn-login" href="/Account/Logout">Выход</a>

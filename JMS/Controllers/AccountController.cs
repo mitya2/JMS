@@ -45,7 +45,7 @@ namespace JMS.Controllers
                         return RedirectToAction("Index", "Home");
                     }
                 }
-                ModelState.AddModelError(nameof(LoginViewModel.UserName), "Неверный логин или пароль");
+                ModelState.AddModelError("All", "Неверный логин или пароль");
             }
 
             model.SideBarState = sideBarState; 
