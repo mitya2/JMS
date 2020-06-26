@@ -4,7 +4,7 @@
 
 @foreach (var el in Model.UsersTasks)
 {
-    <div class="alert alert-warning mt-3">
+    <div class="alert alert-primary mt-3">
         <b>Исполнитель: </b> @el.User.UserName<br />
         <b>Содержание: </b> @el.Content<br />
         <b>Дата выдачи: </b> @el.InitialDateTime<br />

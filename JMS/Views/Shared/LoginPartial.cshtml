@@ -5,16 +5,16 @@
 @if (SignInManager.IsSignedIn(User))
 {
      
-    <li class="nav-item text-nowrap">
+    <li class="nav-item text-nowrap text-white-50">
         <div>
-            <label class="text-white-50 pr-3">Здравствуйте, @User.Identity.Name!</label><a class="btn btn-danger btn-sm btn-login" href="/Account/Logout">Выход</a>
+            <a class="nav-link" href="/Account/Logout">Здравствуйте, @User.Identity.Name! Выход</a>
         </div>
     </li> 
 }
 else
 {
     <li class="nav-item text-nowrap">
-        <a class="btn btn-success btn-sm btn-login" href="/Account/Login">Вход</a>
+        <a class="nav-link" href="/Account/Login">Вход</a>
     </li>
 }
 </ul>
