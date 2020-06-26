@@ -2,7 +2,7 @@
 
 <h3>Вход в личный кабинет</h3>
 
-<form asp-controller="Account" asp-action="Login" method="Post">
+<form asp-controller="Account" asp-action="Login" asp-route-returnUrl="@ViewBag.returnUrl" method="Post">
     <div asp-validation-summary="All" class="text-danger"></div>
     <div class="form-group">
         <label asp-for="UserName"></label>

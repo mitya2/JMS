@@ -2,10 +2,12 @@
 using JMS.Data.Interfaces;
 using JMS.Data.ViewModels;
 using JMS.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JMS.Controllers
 {
+    [Authorize]
     public class UserController : BaseController
     {
         public UserController(ITasks userTasks, IUsers usersRep) : base(userTasks, usersRep)
@@ -13,6 +15,7 @@ namespace JMS.Controllers
             sideBarState.UserActive = "active";
         }
 
+        [Authorize]
         public IActionResult Edit(int id)
         {
             var entity = (id == default) ? new User() : _usersRep.GetUser(id);
@@ -23,6 +26,7 @@ namespace JMS.Controllers
             return View(model);
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult Edit(UserViewModel model)
         {
@@ -37,6 +41,7 @@ namespace JMS.Controllers
             return View(model);
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult Delete(UserViewModel model)
         {
@@ -44,6 +49,7 @@ namespace JMS.Controllers
             return RedirectToAction("List");
         }
 
+        [AllowAnonymous]
         public IActionResult List()
         {
             UserViewModel model = new UserViewModel();

@@ -2,18 +2,21 @@
 using JMS.Data.ViewModels;
 using JMS.Models;
 using JMS.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
 namespace JMS.Controllers
 {
+    [Authorize]
     public class TaskController : BaseController
     {
         public TaskController(ITasks userTasks, IUsers usersRep) : base(userTasks, usersRep)
         {
             sideBarState.TaskActive = "active";
         }
-
+        
+        [Authorize]
         public IActionResult Edit(int id)
         {
             UserTask userTask = (id == default) ? new UserTask() : _tasksRep.GetTask(id);
@@ -30,6 +33,7 @@ namespace JMS.Controllers
             return View(model);
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult Edit(TaskViewModel model)
         {
@@ -47,13 +51,15 @@ namespace JMS.Controllers
             return View(model);
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult Delete(TaskViewModel model)
         {
             _tasksRep.DeleteUserTask(model.Task.id);
             return RedirectToAction("List");
         }
-
+        
+        [AllowAnonymous]
         public IActionResult List()
         {
             TaskViewModel model = new TaskViewModel();

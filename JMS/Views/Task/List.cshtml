@@ -1,4 +1,6 @@
-﻿@model TaskViewModel
+﻿@using Microsoft.AspNetCore.Identity
+@model TaskViewModel
+@inject SignInManager<IdentityUser> SignInManager
 
 <h3>Задания</h3>
 
@@ -26,7 +28,16 @@
         </tbody>
     </table>
 </div>
-<hr />
-<p class="text-center">
-    <a class="btn btn-success btn-custom" asp-controller="Task" asp-action="Edit">Создать</a>
-</p>
+@if (SignInManager.IsSignedIn(User))
+{
+    <hr />
+    <p class="text-center">
+        <a class="btn btn-success btn-custom" asp-controller="Task" asp-action="Edit">Создать</a>
+    </p>
+}
+else
+{
+    <div class="alert alert-warning text-center" role="alert">
+        Для добавления и редактирования заданий необходимо пройти авторизацию!
+    </div>
+}
