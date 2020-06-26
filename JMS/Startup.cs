@@ -29,17 +29,6 @@ namespace JMS
 
             services.AddDbContext<AppDBContext>(options => options.UseSqlServer(Config.ConnectionString));
             
-            //настраиваем identity систему
-            services.AddIdentity<IdentityUser, IdentityRole>(opts =>
-            {
-                opts.User.RequireUniqueEmail = true;
-                opts.Password.RequiredLength = 6;
-                opts.Password.RequireNonAlphanumeric = false;
-                opts.Password.RequireLowercase = false;
-                opts.Password.RequireUppercase = false;
-                opts.Password.RequireDigit = false;
-            }).AddEntityFrameworkStores<AppDBContext>().AddDefaultTokenProviders();
-
             services.AddTransient<IUsers, UsersRepository>();
             services.AddTransient<ITasks, TasksRepository>();
 
