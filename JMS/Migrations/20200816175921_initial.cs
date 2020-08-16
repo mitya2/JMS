@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace JMS.Migrations
 {
-    public partial class _Initial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -191,12 +191,12 @@ namespace JMS.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "5ec87454-8bf5-4703-b8e8-89851fea876d", "42c8877a-09ee-4e90-970f-94f9e11c696f", "admin", null });
+                values: new object[] { "5ec87454-8bf5-4703-b8e8-89851fea876d", "8735f017-91a9-4b24-9e5f-07299d848da6", "admin", "ADMIN" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "c8836f0d-2797-4412-8ef4-5096f985742d", 0, "ed126026-968c-4cce-acc2-a46cc1bfa227", "mitya2@yahoo.com", true, false, null, null, null, "AQAAAAEAACcQAAAAEJi4qE4kuRiuboSad2d76AmzLlQM0vt9OctYLOxNeuiUVLKOWNSnGwciGTMHRfDlpQ==", null, false, "", false, "admin" });
+                values: new object[] { "c8836f0d-2797-4412-8ef4-5096f985742d", 0, "75447943-a60a-45ca-8692-2fb7a83a6262", "mitya2@yahoo.com", true, false, null, "MITYA2@YAHOO.COM", "ADMIN", "AQAAAAEAACcQAAAAEASb0tVA5SHk4quuqR1K8rAn0MsJjiUTaepoNNIrvgRPQmOp/wFUudxVDao/douE4g==", null, false, "", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "Users",
@@ -218,12 +218,12 @@ namespace JMS.Migrations
                 columns: new[] { "id", "CloseDateTime", "Content", "InitialDateTime", "UserID" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2020, 7, 9, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(7334), "Прокачать навык в ASP.NET CORE MVC", new DateTime(2020, 6, 15, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(7224), 1 },
-                    { 4, new DateTime(2020, 6, 26, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8710), "Углубить знания по LINQ", new DateTime(2020, 6, 24, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8709), 1 },
-                    { 2, new DateTime(2020, 7, 5, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8676), "ПОзнакомиться с Vue.js", new DateTime(2020, 6, 15, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8672), 2 },
-                    { 5, new DateTime(2020, 6, 25, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8715), "В очередной раз прочитать про паттерны программирования", new DateTime(2020, 6, 15, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8714), 2 },
-                    { 3, new DateTime(2020, 7, 2, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8706), "Прокачать навык в Bootstrap", new DateTime(2020, 6, 23, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8705), 3 },
-                    { 6, new DateTime(2020, 6, 25, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8719), "Вспомнить MS SQL", new DateTime(2020, 6, 23, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8718), 3 }
+                    { 1, new DateTime(2020, 8, 30, 20, 59, 20, 687, DateTimeKind.Local).AddTicks(8957), "Прокачать навык в ASP.NET CORE MVC", new DateTime(2020, 8, 6, 20, 59, 20, 687, DateTimeKind.Local).AddTicks(8807), 1 },
+                    { 4, new DateTime(2020, 8, 17, 20, 59, 20, 688, DateTimeKind.Local).AddTicks(822), "Углубить знания по LINQ", new DateTime(2020, 8, 15, 20, 59, 20, 688, DateTimeKind.Local).AddTicks(820), 1 },
+                    { 2, new DateTime(2020, 8, 26, 20, 59, 20, 688, DateTimeKind.Local).AddTicks(769), "Познакомиться с Vue.js", new DateTime(2020, 8, 6, 20, 59, 20, 688, DateTimeKind.Local).AddTicks(765), 2 },
+                    { 5, new DateTime(2020, 8, 16, 20, 59, 20, 688, DateTimeKind.Local).AddTicks(828), "В очередной раз прочитать про паттерны программирования", new DateTime(2020, 8, 6, 20, 59, 20, 688, DateTimeKind.Local).AddTicks(826), 2 },
+                    { 3, new DateTime(2020, 8, 23, 20, 59, 20, 688, DateTimeKind.Local).AddTicks(811), "Прокачать навык в Bootstrap", new DateTime(2020, 8, 14, 20, 59, 20, 688, DateTimeKind.Local).AddTicks(809), 3 },
+                    { 6, new DateTime(2020, 8, 16, 20, 59, 20, 688, DateTimeKind.Local).AddTicks(833), "Вспомнить MS SQL", new DateTime(2020, 8, 14, 20, 59, 20, 688, DateTimeKind.Local).AddTicks(831), 3 }
                 });
 
             migrationBuilder.CreateIndex(

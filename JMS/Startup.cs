@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using JMS.Service;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using JMS.Data;
 using JMS.Data.Interfaces;
@@ -27,6 +28,9 @@ namespace JMS
             //подключаем конфиг из appsettings.json
             Configuration.Bind("Project", new Config());
 
+            services.AddTransient<IUsers, UsersRepository>();
+            services.AddTransient<ITasks, TasksRepository>();
+
             services.AddDbContext<AppDBContext>(options => options.UseSqlServer(Config.ConnectionString));
            
             //настраиваем identity систему
@@ -40,8 +44,9 @@ namespace JMS
                 opts.Password.RequireDigit = false;
             }).AddEntityFrameworkStores<AppDBContext>().AddDefaultTokenProviders();
 
-            services.AddTransient<IUsers, UsersRepository>();
-            services.AddTransient<ITasks, TasksRepository>();
+            //services.AddAuthorization();
+            //services.AddControllersWithViews().SetCompatibilityVersion(CompatibilityVersion.Version_3_0).AddSessionStateTempDataProvider();
+
 
             services.AddMvc();
         }

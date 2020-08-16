@@ -92,49 +92,49 @@ namespace JMS.Migrations
                         new
                         {
                             id = 1,
-                            CloseDateTime = new DateTime(2020, 7, 9, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(7334),
+                            CloseDateTime = new DateTime(2020, 8, 30, 20, 59, 20, 687, DateTimeKind.Local).AddTicks(8957),
                             Content = "Прокачать навык в ASP.NET CORE MVC",
-                            InitialDateTime = new DateTime(2020, 6, 15, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(7224),
+                            InitialDateTime = new DateTime(2020, 8, 6, 20, 59, 20, 687, DateTimeKind.Local).AddTicks(8807),
                             UserID = 1
                         },
                         new
                         {
                             id = 2,
-                            CloseDateTime = new DateTime(2020, 7, 5, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8676),
-                            Content = "ПОзнакомиться с Vue.js",
-                            InitialDateTime = new DateTime(2020, 6, 15, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8672),
+                            CloseDateTime = new DateTime(2020, 8, 26, 20, 59, 20, 688, DateTimeKind.Local).AddTicks(769),
+                            Content = "Познакомиться с Vue.js",
+                            InitialDateTime = new DateTime(2020, 8, 6, 20, 59, 20, 688, DateTimeKind.Local).AddTicks(765),
                             UserID = 2
                         },
                         new
                         {
                             id = 3,
-                            CloseDateTime = new DateTime(2020, 7, 2, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8706),
+                            CloseDateTime = new DateTime(2020, 8, 23, 20, 59, 20, 688, DateTimeKind.Local).AddTicks(811),
                             Content = "Прокачать навык в Bootstrap",
-                            InitialDateTime = new DateTime(2020, 6, 23, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8705),
+                            InitialDateTime = new DateTime(2020, 8, 14, 20, 59, 20, 688, DateTimeKind.Local).AddTicks(809),
                             UserID = 3
                         },
                         new
                         {
                             id = 4,
-                            CloseDateTime = new DateTime(2020, 6, 26, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8710),
+                            CloseDateTime = new DateTime(2020, 8, 17, 20, 59, 20, 688, DateTimeKind.Local).AddTicks(822),
                             Content = "Углубить знания по LINQ",
-                            InitialDateTime = new DateTime(2020, 6, 24, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8709),
+                            InitialDateTime = new DateTime(2020, 8, 15, 20, 59, 20, 688, DateTimeKind.Local).AddTicks(820),
                             UserID = 1
                         },
                         new
                         {
                             id = 5,
-                            CloseDateTime = new DateTime(2020, 6, 25, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8715),
+                            CloseDateTime = new DateTime(2020, 8, 16, 20, 59, 20, 688, DateTimeKind.Local).AddTicks(828),
                             Content = "В очередной раз прочитать про паттерны программирования",
-                            InitialDateTime = new DateTime(2020, 6, 15, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8714),
+                            InitialDateTime = new DateTime(2020, 8, 6, 20, 59, 20, 688, DateTimeKind.Local).AddTicks(826),
                             UserID = 2
                         },
                         new
                         {
                             id = 6,
-                            CloseDateTime = new DateTime(2020, 6, 25, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8719),
+                            CloseDateTime = new DateTime(2020, 8, 16, 20, 59, 20, 688, DateTimeKind.Local).AddTicks(833),
                             Content = "Вспомнить MS SQL",
-                            InitialDateTime = new DateTime(2020, 6, 23, 17, 57, 33, 570, DateTimeKind.Local).AddTicks(8718),
+                            InitialDateTime = new DateTime(2020, 8, 14, 20, 59, 20, 688, DateTimeKind.Local).AddTicks(831),
                             UserID = 3
                         });
                 });
@@ -169,8 +169,9 @@ namespace JMS.Migrations
                         new
                         {
                             Id = "5ec87454-8bf5-4703-b8e8-89851fea876d",
-                            ConcurrencyStamp = "42c8877a-09ee-4e90-970f-94f9e11c696f",
-                            Name = "admin"
+                            ConcurrencyStamp = "8735f017-91a9-4b24-9e5f-07299d848da6",
+                            Name = "admin",
+                            NormalizedName = "ADMIN"
                         });
                 });
 
@@ -267,11 +268,13 @@ namespace JMS.Migrations
                         {
                             Id = "c8836f0d-2797-4412-8ef4-5096f985742d",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ed126026-968c-4cce-acc2-a46cc1bfa227",
+                            ConcurrencyStamp = "75447943-a60a-45ca-8692-2fb7a83a6262",
                             Email = "mitya2@yahoo.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAEAACcQAAAAEJi4qE4kuRiuboSad2d76AmzLlQM0vt9OctYLOxNeuiUVLKOWNSnGwciGTMHRfDlpQ==",
+                            NormalizedEmail = "MITYA2@YAHOO.COM",
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAEAACcQAAAAEASb0tVA5SHk4quuqR1K8rAn0MsJjiUTaepoNNIrvgRPQmOp/wFUudxVDao/douE4g==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
